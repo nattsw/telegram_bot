@@ -14,8 +14,9 @@ module TelegramBot
     attribute :new_chat_participant, User
     attribute :left_chat_participant, User
     attribute :new_chat_title, String
-    attribute :delete_chat_photo, Boolean
-    attribute :group_chat_created, Boolean
+    attribute :delete_chat_photo, TrueClass
+    attribute :group_chat_created, TrueClass
+
     alias_method :id, :message_id
     alias_method :to_i, :id
     alias_method :user, :from
