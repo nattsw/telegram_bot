@@ -21,12 +21,16 @@ And then execute:
 
 ## Usage
 
+You need to add an environment variable for your bot token.
+
+    export TELEGRAM_BOT_TOKEN=<your bot token from the BotFather>
+
 Here's an example:
 
 ```ruby
 require 'telegram_bot'
 
-bot = TelegramBot.new(token: '[YOUR TELEGRAM BOT TOKEN GOES HERE]')
+bot = TelegramBot.new(token: ENV['TELEGRAM_BOT_TOKEN'])
 bot.get_updates(fail_silently: true) do |message|
   puts "@#{message.from.username}: #{message.text}"
   command = message.get_command_for(bot)
